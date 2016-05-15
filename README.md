@@ -58,7 +58,7 @@ const Navbar = mediaQuery(class Navbar extends React.Component {
 ```
 
 ## Included media queries
-* Bootstrap 4[src](https://github.com/bySabi/react-mediaquery-props/blob/master/src/bootstrap4-media-query.js)
+* Bootstrap 4 [src](https://github.com/bySabi/react-mediaquery-props/blob/master/src/bootstrap4-media-query.js)
 
 ## Contributing
 * Media queries definitions for other projects than already included
