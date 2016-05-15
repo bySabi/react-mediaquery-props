@@ -1,6 +1,6 @@
 {
   "name": "react-mediaquery-props",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React higher-order component that pass media queries props to components",
   "files": [
     "lib"
