@@ -1,29 +1,31 @@
 import React from 'react';
 
-const mediaQuery = (C, querys) =>
+const mediaQuery = (C, queries) =>
   class _mediaQuery extends React.Component {
 
     state = {};
-    mql = new Map();
+    _mqList = new Map();
+
+    _onMatch = () => this._mqList.forEach((mql, key) =>
+      this.state[key] !== mql.matches && this.setState({ [key]: mql.matches }));
 
     componentWillMount() {
-      for (let key in querys) {
-        const query = querys[key];
-        const mql = window.matchMedia(query);
-
+      Object.keys(queries).forEach(key => {
+        const mql = window.matchMedia(queries[key]);
         mql.addListener(this._onMatch);
-        this.mql.set(key, mql);
-      }
 
-      this._onMatch(null);
-    }
+        this._mqList.set(key, mql);
 
-    _onMatch = (mql) => {
-      this.mql.forEach((mql, key) => this.setState({[key]: mql.matches}));
+        // Init state without rerender
+        this.state[key] = false;
+      });
+
+      // set initial media queries state
+      this._onMatch();
     }
 
     componentWillUnmount() {
-      this.mql && this.mql.forEach(mql => mql.removeListener(this._onMatch));
+      this._mqList && this._mqList.forEach(mql => mql.removeListener(this._onMatch));
     }
 
     render() {

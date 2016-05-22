@@ -8,7 +8,7 @@ $ npm install react-mediaquery-props --save
 ```
 
 ## Description
-A React higher-order components, [HOC](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775), is a function that receive a React Component and return an enhance version.
+A React higher-order components, [HOC](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775), is a function that receive a React Component and return a enhance version.
 
 This module enhance components with prop `mq` object. Each key is a matchMedia `listener` name and value is a flag that reflect actual media query state. See [Bootstrap 4](https://github.com/bySabi/react-mediaquery-props/blob/master/src/bootstrap4-media-query.js) media queries included.
 
